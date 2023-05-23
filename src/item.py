@@ -36,6 +36,7 @@ class Item:
 
     @classmethod
     def instantiate_from_csv(cls):
+        cls.all = []
         path = '../src/items.csv'
         with open(path, 'r', encoding='cp1251') as file:
             datafile = csv.DictReader(file)
@@ -59,3 +60,6 @@ class Item:
         Применяет установленную скидку для конкретного товара.
         """
         self.price *= self.pay_rate
+
+    def __repr__(self):
+        return f"Item ({self.name}, {self.price}, {self.quantity})"
