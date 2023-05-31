@@ -20,6 +20,7 @@ def test_set_number_of_sim(phone_1):
 
 def test_set_number_of_sim__ValueError(phone_1):
     with pytest.raises(ValueError):
+        phone_1.number_of_sim = 2.2
         phone_1.number_of_sim = 0
 
 
