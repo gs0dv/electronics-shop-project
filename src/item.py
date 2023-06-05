@@ -10,6 +10,7 @@ class Item:
     """
     pay_rate = 1.0
     all = []
+    path = '../src/items.csv'
 
     def __init__(self, name: str, price: float, quantity: int) -> None:
         """
@@ -46,9 +47,9 @@ class Item:
     @classmethod
     def instantiate_from_csv(cls):
         cls.all = []
-        path = '../src/item.csv'
+
         try:
-            with open(path, 'r', encoding='cp1251') as file:
+            with open(cls.path, 'r', encoding='cp1251') as file:
                 datafile = csv.DictReader(file)
                 try:
                     for item in datafile:
